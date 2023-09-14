@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The main template file.
  *
@@ -13,24 +14,32 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+        <div class="min-h-screen">
 
-		<?php
-		if ( have_posts() ) :
+            <?php
+            if (is_front_page()) :
 
-			get_template_part( 'loop' );
+                remove_action('storefront_loop_post', 'storefront_post_header');
 
-		else :
+            endif;
 
-			get_template_part( 'content', 'none' );
+            if (have_posts()) :
 
-		endif;
-		?>
+                get_template_part('loop');
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+            else :
+
+                get_template_part('content', 'none');
+
+            endif;
+            ?>
+
+        </div>
+    </main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
-do_action( 'storefront_sidebar' );
+do_action('storefront_sidebar');
 get_footer();

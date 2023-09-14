@@ -19,7 +19,11 @@ class WooCommerceSettingsServiceProvider extends ServiceProvider
         /**
          * Modify WooCommerce templates path
          */
-        add_filter('woocommerce_template_path', [$this, 'woo_template_path']);
+        add_filter('woocommerce_template_path', [$this, 'template_path']);
+
+        add_action('woocommerce_before_main_content', [$this, 'before_main_content']);
+
+        add_action('woocommerce_after_main_content', [$this, 'after_main_content']);
     }
 
     public function template_redirect()
@@ -39,10 +43,20 @@ class WooCommerceSettingsServiceProvider extends ServiceProvider
         exit;
     }
 
-    public function woo_template_path($path)
+    public function template_path($path)
     {
         $my_path = get_stylesheet_directory() . '/resources/templates/woocommerce/';
 
         return file_exists($my_path) ? 'resources/templates/woocommerce/' : $path;
+    }
+
+    public function before_main_content()
+    {
+        wc_get_template('particles/before-main-content-wrapper.php');
+    }
+
+    public function after_main_content()
+    {
+        wc_get_template('particles/after-main-content-wrapper.php');
     }
 }

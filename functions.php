@@ -9,7 +9,7 @@
  * If you don't plan to dequeue the Storefront Core CSS you can remove the subsequent line and as well
  * as the sf_child_theme_dequeue_style() function declaration.
  */
-// add_action( 'wp_enqueue_scripts', 'sf_child_theme_dequeue_style', 999 );
+add_action( 'wp_enqueue_scripts', 'sf_child_theme_dequeue_style', 999 );
 
 /**
  * Dequeue the Storefront Parent theme core CSS
