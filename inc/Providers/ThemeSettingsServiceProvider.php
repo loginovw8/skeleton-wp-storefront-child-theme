@@ -19,13 +19,15 @@ class ThemeSettingsServiceProvider extends ServiceProvider
         add_action('init', [$this, 'remove_default_hooks']);
         add_action('storefront_header', [$this, 'storefront_header']);
         add_action('storefront_before_content', [$this, 'storefront_before_content']);
+        add_action('storefront_loop_before', [$this, 'storefront_loop_before']);
+        add_action('storefront_loop_after', [$this, 'storefront_loop_after']);
         add_action('storefront_footer', [$this, 'storefront_footer']);
     }
 
     public function modify_template_hierarchy()
     {
         $template_files = [
-            'index',
+            // 'index',
             'frontpage', 'home', '404', 'archive',
             'author', 'category', 'tag', 'taxonomy', 'date',
             'page', 'paged', 'search', 'single', 'singular', 'attachment',
@@ -84,6 +86,16 @@ class ThemeSettingsServiceProvider extends ServiceProvider
     public function storefront_before_content()
     {
         remove_action('storefront_before_content', 'woocommerce_breadcrumb');
+    }
+
+    public function storefront_loop_before()
+    {
+        get_template_part('resources/templates/particles/loop-before');
+    }
+
+    public function storefront_loop_after()
+    {
+        get_template_part('resources/templates/particles/loop-after');
     }
 
     public function storefront_footer()
