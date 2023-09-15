@@ -28,6 +28,11 @@ class WooCommerceSettingsServiceProvider extends ServiceProvider
         add_action('woocommerce_after_main_content', [$this, 'after_main_content']);
 
         add_action('woocommerce_shop_loop_item_title', [$this, 'shop_loop_item_title']);
+
+        add_action('woocommerce_before_shop_loop_item', [$this, 'before_shop_loop_item']);
+
+        add_action('woocommerce_before_shop_loop_item', [$this, 'before_shop_loop_item']);
+        add_action('woocommerce_after_shop_loop_item', [$this, 'after_shop_loop_item']);
     }
 
     public function template_redirect()
@@ -50,6 +55,8 @@ class WooCommerceSettingsServiceProvider extends ServiceProvider
     public function remove_default_hooks()
     {
         remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title');
+        remove_action('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open');
+        remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close');
     }
 
     public function template_path($path)
@@ -71,6 +78,16 @@ class WooCommerceSettingsServiceProvider extends ServiceProvider
 
     public function shop_loop_item_title()
     {
-        wc_get_template('particles/product/title.php');
+        wc_get_template('particles/content-product/title.php');
+    }
+
+    public function before_shop_loop_item()
+    {
+        wc_get_template('particles/content-product/link-open.php');
+    }
+
+    public function after_shop_loop_item()
+    {
+        wc_get_template('particles/content-product/link-close.php');
     }
 }

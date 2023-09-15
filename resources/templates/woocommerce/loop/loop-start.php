@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Product Loop Start
  *
@@ -16,8 +15,8 @@
  * @version     3.3.0
  */
 
-if (!defined('ABSPATH')) {
-    exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 ?>
-<div class="products grid grid-cols-4 gap-4">
+<ul class="grid grid-cols-4 gap-4">

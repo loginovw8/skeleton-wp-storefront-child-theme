@@ -1,4 +1,4 @@
-<div class="max-w-screen-xl mx-auto pt-10 pb-2 border-b">
+<div class="max-w-screen-xl mx-auto pt-10 py-2 border-b">
     <div class="flex justify-between">
         <a class="font-bold text-3xl hover:text-gray-500" href="/"><?php echo get_bloginfo('name'); ?></a>
         <form role="search" method="get" action="/">

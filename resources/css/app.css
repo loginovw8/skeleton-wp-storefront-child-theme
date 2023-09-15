@@ -5,3 +5,13 @@
 [x-cloak] {
     display: none !important;
 }
+
+#page {
+    padding: 0 1rem;
+}
+
+.added_to_cart {
+    color: white;
+    background-color: black;
+    padding: 0.5rem 1rem;
+}
