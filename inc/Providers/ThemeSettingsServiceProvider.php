@@ -20,6 +20,7 @@ class ThemeSettingsServiceProvider extends ServiceProvider
         add_action('storefront_header', [$this, 'storefront_header']);
         add_action('storefront_before_content', [$this, 'storefront_before_content']);
         add_action('storefront_loop_before', [$this, 'storefront_loop_before']);
+        add_action('storefront_loop_post', [$this, 'loop_post']);
         add_action('storefront_loop_after', [$this, 'storefront_loop_after']);
         add_action('storefront_footer', [$this, 'storefront_footer']);
     }
@@ -64,6 +65,7 @@ class ThemeSettingsServiceProvider extends ServiceProvider
         remove_action('storefront_header', 'storefront_header_container', 0);
         remove_action('storefront_header', 'storefront_header_container_close', 41);
         remove_action('storefront_before_content', 'woocommerce_breadcrumb', 10);
+        remove_action('storefront_loop_post', 'storefront_post_header', 10);
     }
 
     public function storefront_header()
@@ -91,6 +93,13 @@ class ThemeSettingsServiceProvider extends ServiceProvider
     public function storefront_loop_before()
     {
         get_template_part('resources/templates/particles/loop-before');
+    }
+
+    public function loop_post()
+    {
+        if (!is_front_page()) {
+            get_template_part('resources/templates/particles/page-title');
+        }
     }
 
     public function storefront_loop_after()

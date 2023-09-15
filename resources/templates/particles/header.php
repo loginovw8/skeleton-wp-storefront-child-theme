@@ -1,4 +1,4 @@
-<div class="max-w-screen-xl mx-auto pt-10 pb-6 border-b">
+<div class="max-w-screen-xl mx-auto pt-10 pb-2 border-b">
     <div class="flex justify-between">
         <a class="font-bold text-3xl hover:text-gray-500" href="/"><?php echo get_bloginfo('name'); ?></a>
         <form role="search" method="get" action="/">
@@ -8,7 +8,7 @@
         </form>
     </div>
 
-    <div class="flex justify-between items-center mt-10">
+    <div class="flex justify-between items-center">
         <?php
         $menu_name = 'primary';
         $locations = get_nav_menu_locations();

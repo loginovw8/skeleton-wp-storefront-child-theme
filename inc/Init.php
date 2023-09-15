@@ -31,6 +31,7 @@ final class Init
         return [
             Providers\EnqueueServiceProvider::class,
             Providers\ThemeSettingsServiceProvider::class,
+            Providers\ShortcodeSettingsServiceProvider::class,
             Providers\WooCommerceSettingsServiceProvider::class,
         ];
     }
