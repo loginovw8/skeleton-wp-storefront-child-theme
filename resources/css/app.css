@@ -12,6 +12,59 @@
 
 .added_to_cart {
     color: white;
+    font-size: 0.875rem;
     background-color: black;
     padding: 0.5rem 1rem;
+}
+
+.woocommerce-pagination {
+    margin-bottom: 1rem;
+}
+
+.woocommerce-pagination ul {
+    color: white;
+    font-size: 0.875rem;
+    display: inline-block;
+}
+
+.woocommerce-pagination ul li {
+    display: inline-block;
+}
+
+.woocommerce-pagination ul li a,
+.woocommerce-pagination ul li span {
+    padding: 0.25rem 1rem;
+    background-color: black;
+}
+
+.woocommerce-pagination ul li span.current {
+    background-color: gray;
+}
+
+.woocommerce-pagination ul li a:hover {
+    background-color: gray;
+}
+
+.woocommerce-product-gallery__trigger {
+    display: flex;
+    position: absolute;
+    right: 0.5rem;
+    z-index: 10;
+}
+
+.form-row {
+    margin-bottom: 0.5rem;
+}
+
+.form-row label {
+    display: block;
+    font-size: 0.875rem;
+}
+
+.woocommerce-MyAccount-navigation ul li a::before {
+    content: "" !important;
+}
+
+.woocommerce-cart-form .quantity input {
+    max-width: 100%;
 }

@@ -23,6 +23,16 @@ class ThemeSettingsServiceProvider extends ServiceProvider
         add_action('storefront_loop_post', [$this, 'loop_post']);
         add_action('storefront_loop_after', [$this, 'storefront_loop_after']);
         add_action('storefront_footer', [$this, 'storefront_footer']);
+
+        /**
+         * Disable Storefront Sticky Add-To-Cart on Product Page
+         */
+        add_filter('theme_mod_storefront_sticky_add_to_cart', '__return_false', 20);
+
+        /**
+         * Disable Storefront Product Pagination on Product Page
+         */
+        add_filter('theme_mod_storefront_product_pagination', '__return_false', 11);
     }
 
     public function modify_template_hierarchy()
