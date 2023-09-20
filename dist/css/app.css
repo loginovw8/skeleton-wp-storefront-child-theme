@@ -707,8 +707,8 @@ select {
 .mt-6 {
   margin-top: 1.5rem;
 }
-.mb-6 {
-  margin-bottom: 1.5rem;
+.mb-1 {
+  margin-bottom: 0.25rem;
 }
 .inline-block {
   display: inline-block;
@@ -758,8 +758,14 @@ select {
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 .flex-col {
   flex-direction: column;
+}
+.items-start {
+  align-items: flex-start;
 }
 .items-center {
   align-items: center;
@@ -770,8 +776,15 @@ select {
 .gap-4 {
   gap: 1rem;
 }
+.gap-y-2 {
+  row-gap: 0.5rem;
+}
 .border {
   border-width: 1px;
+}
+.border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
 }
 .border-b {
   border-bottom-width: 1px;
@@ -826,6 +839,10 @@ select {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .pb-20 {
   padding-bottom: 5rem;
 }
@@ -834,9 +851,6 @@ select {
 }
 .pt-10 {
   padding-top: 2.5rem;
-}
-.pb-6 {
-  padding-bottom: 1.5rem;
 }
 .align-top {
   vertical-align: top;
@@ -932,6 +946,11 @@ select {
     background-color: gray;
 }
 
+.woocommerce-pagination ul li a.prev::after,
+.woocommerce-pagination ul li a.next::after {
+    content: "";
+}
+
 .woocommerce-product-gallery__trigger {
     display: flex;
     position: absolute;
@@ -954,6 +973,10 @@ select {
 
 .woocommerce-cart-form .quantity input {
     max-width: 100%;
+}
+
+#billing_country_field {
+    display: none;
 }
 
 .hover\:bg-gray-700:hover {
@@ -989,6 +1012,10 @@ select {
 
   .sm\:w-6 {
     width: 1.5rem;
+  }
+
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sm\:px-4 {
@@ -1031,6 +1058,10 @@ select {
 
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:flex-row {

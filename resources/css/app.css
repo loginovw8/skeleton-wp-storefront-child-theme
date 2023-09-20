@@ -45,6 +45,11 @@
     background-color: gray;
 }
 
+.woocommerce-pagination ul li a.prev::after,
+.woocommerce-pagination ul li a.next::after {
+    content: "";
+}
+
 .woocommerce-product-gallery__trigger {
     display: flex;
     position: absolute;
@@ -67,4 +72,8 @@
 
 .woocommerce-cart-form .quantity input {
     max-width: 100%;
+}
+
+#billing_country_field {
+    display: none;
 }

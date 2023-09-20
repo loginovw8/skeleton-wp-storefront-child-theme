@@ -2,7 +2,7 @@
     <div class="flex flex-col md:flex-row justify-between">
         <a class="mb-4 md:m-0 font-bold text-3xl hover:text-gray-500" href="/"><?php echo get_bloginfo('name'); ?></a>
         <form class="mb-2 md:m-0" role="search" method="get" action="/">
-            <input type="search" name="s" placeholder="<?php echo __('Search products...', 'woocommerce'); ?>">
+            <input type="search" name="s" placeholder="<?php echo __('Search', 'woocommerce'); ?>">
             <input type="hidden" name="post_type" value="product" />
             <button class="bg-black text-white px-4 py-2 border border-black hover:bg-gray-800" type="submit" value=""><?php echo __('Search') ?></button>
         </form>

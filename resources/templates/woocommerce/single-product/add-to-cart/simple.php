@@ -49,7 +49,7 @@ if ($product->is_in_stock()) : ?>
             ?>
         </div>
 
-        <button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="inline-block bg-black hover:bg-gray-700 cursor-pointer text-white px-4 py-2 single_add_to_cart_button button alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
+        <button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="inline-block bg-black hover:bg-gray-700 text-sm cursor-pointer text-white px-4 py-2 single_add_to_cart_button button alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
 
         <?php do_action('woocommerce_after_add_to_cart_button'); ?>
     </form>

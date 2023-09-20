@@ -46,6 +46,7 @@ class WooCommerceSettingsServiceProvider extends ServiceProvider
          */
         add_filter('woocommerce_account_menu_items', function ($menu_links) {
             unset($menu_links['downloads']);
+            unset($menu_links['dashboard']);
 
             return $menu_links;
         });
@@ -58,9 +59,18 @@ class WooCommerceSettingsServiceProvider extends ServiceProvider
         /**
          * Edit billing fields on checkout form
          */
-        add_filter('woocommerce_checkout_fields', [$this, 'woo_checkout_fields']);
+        add_filter('woocommerce_checkout_fields', [$this, 'checkout_fields']);
+
+        /**
+         * Edit billing fields on address my account form
+         */
+        add_filter('woocommerce_billing_fields', [$this, 'billing_fields']);
 
         add_filter('woocommerce_enable_order_notes_field', '__return_false');
+
+        add_filter('default_checkout_billing_country', function () {
+            return 'RU';
+        });
 
         // add_filter('woocommerce_post_class', function($classes) {
         //     $classes[] = 'inline-block';
@@ -134,11 +144,10 @@ class WooCommerceSettingsServiceProvider extends ServiceProvider
         echo do_shortcode('[woocommerce_cart]');
     }
 
-    function woo_checkout_fields($fields)
+    function checkout_fields($fields)
     {
         unset($fields['billing']['billing_company']);
         unset($fields['billing']['billing_city']);
-        unset($fields['billing']['billing_country']);
         unset($fields['billing']['billing_address_2']);
         unset($fields['billing']['billing_state']);
         unset($fields['billing']['billing_postcode']);
@@ -148,5 +157,39 @@ class WooCommerceSettingsServiceProvider extends ServiceProvider
         // $fields['billing']['order_comments']['type']        = 'textarea';
 
         return $fields;
+    }
+
+    function billing_fields($fields)
+    {
+        if (is_wc_endpoint_url('edit-address')) {
+            unset($fields['billing_company']);
+            unset($fields['billing_address_2']);
+            unset($fields['billing_state']);
+            unset($fields['billing_postcode']);
+            unset($fields['billing_city']);
+        }
+
+        return $fields;
+
+        // if (is_account_page()) {
+        //     $filter = [
+        //         'billing_company',
+        //         'billing_city',
+        //         'billing_country',
+        //         'billing_address_2',
+        //         'billing_state',
+        //         'billing_postcode',
+        //     ];
+        //     foreach ($fields as $key => $field) {
+        //         if (in_array($key, $filter)) {
+        //             $fields[$key]['required'] = false;
+        //             $fields[$key]['class']    = ['hidden'];
+        //         } else {
+        //             $fields[$key]['class'] = ['form-row--base'];
+        //         }
+        //     }
+        // }
+
+        // return $fields;
     }
 }

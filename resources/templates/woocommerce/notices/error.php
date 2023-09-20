@@ -25,7 +25,7 @@ if (!$notices) {
 }
 
 ?>
-<ul class="max-w-screen-xl mx-auto p-4 mt-4 bg-red-500 text-white woocommerce-error" role="alert">
+<ul class="max-w-screen-xl mx-auto p-4 my-4 bg-red-500 text-white woocommerce-error" role="alert">
     <?php foreach ($notices as $notice) : ?>
         <li<?php echo wc_get_notice_data_attr($notice); ?>>
             <?php echo wc_kses_notice($notice['notice']); ?>

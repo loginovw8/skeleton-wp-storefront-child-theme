@@ -24,7 +24,7 @@ global $product;
 ?>
 
 <div class="mt-2">
-    <div class="flex justify-between">
+    <div class="flex flex-col justify-between items-start gap-y-2">
         <?php
         echo apply_filters(
             'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
