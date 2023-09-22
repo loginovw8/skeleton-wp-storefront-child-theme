@@ -71,12 +71,6 @@ class WooCommerceSettingsServiceProvider extends ServiceProvider
         add_filter('default_checkout_billing_country', function () {
             return 'RU';
         });
-
-        // add_filter('woocommerce_post_class', function($classes) {
-        //     $classes[] = 'inline-block';
-
-        //     return $classes;
-        // }, 10, 2);
     }
 
     public function template_redirect()
@@ -151,10 +145,6 @@ class WooCommerceSettingsServiceProvider extends ServiceProvider
         unset($fields['billing']['billing_address_2']);
         unset($fields['billing']['billing_state']);
         unset($fields['billing']['billing_postcode']);
-        // unset($fields['order']['order_comments']);
-        // $fields['billing']['order_comments']['placeholder'] = 'Комментарий';
-        // $fields['billing']['order_comments']['label']       = 'Комментарий';
-        // $fields['billing']['order_comments']['type']        = 'textarea';
 
         return $fields;
     }
@@ -170,26 +160,5 @@ class WooCommerceSettingsServiceProvider extends ServiceProvider
         }
 
         return $fields;
-
-        // if (is_account_page()) {
-        //     $filter = [
-        //         'billing_company',
-        //         'billing_city',
-        //         'billing_country',
-        //         'billing_address_2',
-        //         'billing_state',
-        //         'billing_postcode',
-        //     ];
-        //     foreach ($fields as $key => $field) {
-        //         if (in_array($key, $filter)) {
-        //             $fields[$key]['required'] = false;
-        //             $fields[$key]['class']    = ['hidden'];
-        //         } else {
-        //             $fields[$key]['class'] = ['form-row--base'];
-        //         }
-        //     }
-        // }
-
-        // return $fields;
     }
 }

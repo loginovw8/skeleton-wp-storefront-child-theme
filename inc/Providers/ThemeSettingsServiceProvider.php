@@ -38,7 +38,6 @@ class ThemeSettingsServiceProvider extends ServiceProvider
     public function modify_template_hierarchy()
     {
         $template_files = [
-            // 'index',
             'frontpage', 'home', '404', 'archive',
             'author', 'category', 'tag', 'taxonomy', 'date',
             'page', 'paged', 'search', 'single', 'singular', 'attachment',

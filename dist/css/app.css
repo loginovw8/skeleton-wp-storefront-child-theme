@@ -683,6 +683,9 @@ select {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -706,9 +709,6 @@ select {
 }
 .mt-6 {
   margin-top: 1.5rem;
-}
-.mb-1 {
-  margin-bottom: 0.25rem;
 }
 .inline-block {
   display: inline-block;
@@ -757,9 +757,6 @@ select {
 }
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
@@ -835,13 +832,13 @@ select {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 .pb-20 {
   padding-bottom: 5rem;
@@ -907,10 +904,21 @@ select {
     display: none !important;
 }
 
+/* storefront */
 #page {
     padding: 0 1rem;
 }
 
+.form-row {
+    margin-bottom: 0.5rem;
+}
+
+.form-row label {
+    display: block;
+    font-size: 0.875rem;
+}
+
+/* content-product */
 .added_to_cart {
     color: white;
     font-size: 0.875rem;
@@ -918,6 +926,7 @@ select {
     padding: 0.5rem 1rem;
 }
 
+/* pagination */
 .woocommerce-pagination {
     margin-bottom: 1rem;
 }
@@ -951,6 +960,7 @@ select {
     content: "";
 }
 
+/* single-product */
 .woocommerce-product-gallery__trigger {
     display: flex;
     position: absolute;
@@ -958,19 +968,12 @@ select {
     z-index: 10;
 }
 
-.form-row {
-    margin-bottom: 0.5rem;
-}
-
-.form-row label {
-    display: block;
-    font-size: 0.875rem;
-}
-
+/* my-account */
 .woocommerce-MyAccount-navigation ul li a::before {
     content: "" !important;
 }
 
+/* checkout */
 .woocommerce-cart-form .quantity input {
     max-width: 100%;
 }
@@ -1014,10 +1017,6 @@ select {
     width: 1.5rem;
   }
 
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .sm\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -1052,16 +1051,16 @@ select {
     margin-right: 1rem;
   }
 
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:flex-row {
